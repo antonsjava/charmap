@@ -97,10 +97,7 @@ for char mapping and removing but string is converted only once.
       CE2Ascii.charMapper()
       , SequenceCharMapper.instance("\\/ ", "___", ";:&")
       , new CharMapper() {
-        protected boolean isToBeRemoved(char c) {
-          if((c < 32) || (c > 126)) return true;
-          return false;
-        }
+        protected boolean isToBeRemoved(char c) { return (c < 32) || (c > 126); }
         protected char map(char c) { return c; }
       }
     );
