@@ -97,15 +97,15 @@ for char mapping and removing but string is converted only once.
       CE2Ascii.charMapper()
       , SequenceCharMapper.instance("\\/ ", "___", ";:&")
       , new CharMapper() {
-        protected boolean isToBeRemoved(char c) { return (c < 32) || (c > 126); }
-        protected char map(char c) { return c; }
+          protected boolean isToBeRemoved(char c) { return (c < 32) || (c > 126); }
+          protected char map(char c) { return c; }
       }
     );
 ```
 This example combine 
  - CE2Ascii mapper.
  - Mapper mapping slash, backslash and space into underline and remoces some special chars.
- - Maper which removes all none ascii chars.
+ - Maper which keeps onlu printable ascii chars.
 
 ## CE2Ascii and EE2Ascii
 
