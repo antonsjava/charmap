@@ -1,11 +1,11 @@
 # CharMap
 
-CharMap is simple Java library with API for transforming strings in char by char.
-It simplyfy code, where you neew to replace some chars in string into onother onea.
+CharMap is simple Java library with API for transforming strings in char by char way.
+It simplyfy code, where you neew to replace some chars in string into onother ones.
 
 ## Motivation
 
-Real motivation for this API was class CE2Ascii from this linrary. It enables you 
+Real motivation for this API was class CE2Ascii from this library. It enables you 
 to replace some special Slovak characters (like 'ô') into pure ascii characters (like
 'o' in this case) 
 
@@ -27,15 +27,15 @@ for string transformation.
   CharMapper anMapper = ...
   String newValue = anMapper.map(value);
 ```
-The method creates new string from input one. During copying chars each char is chech
-if myst be removed (isToBeRemoved() method) and if not it is mapped to another one (map()).
+The method creates new string from input one. During copying chars each char is check
+if must be removed (isToBeRemoved() method) and if not it is mapped to another one (map()).
 
 Subclasses implements isToBeRemoved(char) and map(char) methods to change behaviour of 
 string mapping. 
 
 ## SequenceCharMapper
 
-SequenceCharMapper implements char by char mapping using two strings of same length. 
+SequenceCharMapper implements char by char mapping by using two strings of same length. 
 Chars are mapped by same position in strings. Also set of chars to be removed is defined 
 by string. 
 ```java
@@ -54,7 +54,7 @@ So if you have long mapped sequence it is better to use BTCharMapper.
 removeChars sequence is iterate sequentially (normally thera are only few chars to be explicitly 
 removed.)
 
-You van use method BTCharMapper.convertLinearToBT() to order mapping sequence in binary tree.
+You can use method BTCharMapper.convertLinearToBT() to order mapping sequence in binary tree.
 
 You can write an simple code for transforming chars stored in file (first two lines as fromChars 
 and toChars) into new file with chars in binary tree order. (for simplicity it usess also utilities 
@@ -75,9 +75,9 @@ public class AlphabetFile {
     String toLine = lines.get(1);
     String[] newLines = BTCharMapper.convertLinearToBT(fromLine, toLine, (char)0);
     StringBuilder sb = new StringBuilder();
-    sb.append(Unicode.escapeJava(newLines[0]));
+    sb.append("    String fromChars = \"").append(Unicode.escapeJava(newLines[0])).append("\";"));
     sb.append('\n');
-    sb.append(Unicode.escapeJava(newLines[1]));
+    sb.append("    String toChars = \"").append(Unicode.escapeJava(newLines[1])).append("\";"));
     TextFile.save(filename + ".escaped", "utf-8", sb.toString());
   }
 
@@ -87,21 +87,10 @@ public class AlphabetFile {
 }
 ```
 
-
-
-If stores implements char by char mapping using two strings of same length. 
-Chars are mapped by same position in strings. Also set of chars to be removed 
-is defined by string. 
-```java
-		CharMapper anMapper = SequenceCharMapper.instance(".\\", "-/", ":;\n\r")
-```
-This mapper converts each '.' to '-' and '\\' to '/' and chars ':', ';', '\n', 
-'\r' will be striped out.
-
 ## MultipleCharMapper
 
-If you already have some CharMappers you want to use in sequence you can use it 
-using MultipleCharMapper. The class allows you to combine implemented functionalit 
+If you already have some CharMappers you want to use them in sequence you can use it 
+using MultipleCharMapper. The class allows you to combine implemented functionality 
 for char mapping and removing but string is converted only once. 
 ```java
     CharMapper filenameMapper = MultipleCharMapper.instance(
@@ -117,9 +106,9 @@ for char mapping and removing but string is converted only once.
     );
 ```
 This example combine 
- - CE2Ascii mapper 
-	- mapper mapping slash, backslash and space into underline and remoces some special chars
- - maper which removes all none ascii chars.
+ - CE2Ascii mapper.
+ - Mapper mapping slash, backslash and space into underline and remoces some special chars.
+ - Maper which removes all none ascii chars.
 
 ## CE2Ascii and EE2Ascii
 
