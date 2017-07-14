@@ -192,7 +192,7 @@ public class BTCharMapper extends SequenceCharMapper {
     public static BTCharMapper instanceFromNoBT(String fromChars, String toChars) {
         String[] data = convertLinearToBT(fromChars, toChars, (char)0);
         BTCharMapper mapper = new BTCharMapper(data[0], data[1]);
-        return mapper;
+        return new BTCharMapper(fromChars, toChars);
     }
 
     /**
