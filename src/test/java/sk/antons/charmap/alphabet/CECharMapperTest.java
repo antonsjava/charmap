@@ -15,8 +15,6 @@
  */
 package sk.antons.charmap.alphabet;
 
-import static javax.management.Query.value;
-import sk.antons.charmap.*;
 import org.junit.Assert;
 import org.junit.Test;
 

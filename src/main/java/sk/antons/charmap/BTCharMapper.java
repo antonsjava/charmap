@@ -161,7 +161,7 @@ public class BTCharMapper extends SequenceCharMapper {
     /**
      * Factory method for class BTCharMapper. 
      * No removeChars  sequence is defined. 
-     * @param fromChars from sequence
+     * @param fromChars from sequence in BT form
      * @param toChars to sequence
      * @return instance of BTCharMapper
      */
@@ -171,13 +171,40 @@ public class BTCharMapper extends SequenceCharMapper {
 
     /**
      * Factory method for class BTCharMapper. 
-     * @param fromChars from sequence
+     * @param fromChars from sequence in BT form
      * @param toChars to sequence
      * @param removeChars remove sequence
      * @return instance of BTCharMapper
      */
     public static BTCharMapper instance(String fromChars, String toChars, String removeChars) {
         BTCharMapper mapper = new BTCharMapper(fromChars, toChars);
+        mapper.setRemoveChars(removeChars);
+        return mapper;
+    }
+
+    /**
+     * Factory method for class BTCharMapper. 
+     * No removeChars  sequence is defined. 
+     * @param fromChars from sequence (any sequence)
+     * @param toChars to sequence
+     * @return instance of BTCharMapper
+     */
+    public static BTCharMapper instanceFromNoBT(String fromChars, String toChars) {
+        String[] data = convertLinearToBT(fromChars, toChars, (char)0);
+        BTCharMapper mapper = new BTCharMapper(data[0], data[1]);
+        return mapper;
+    }
+
+    /**
+     * Factory method for class BTCharMapper. 
+     * @param fromChars from sequence in any form
+     * @param toChars to sequence
+     * @param removeChars remove sequence
+     * @return instance of BTCharMapper
+     */
+    public static BTCharMapper instanceFromNoBT(String fromChars, String toChars, String removeChars) {
+        String[] data = convertLinearToBT(fromChars, toChars, (char)0);
+        BTCharMapper mapper = new BTCharMapper(data[0], data[1]);
         mapper.setRemoveChars(removeChars);
         return mapper;
     }

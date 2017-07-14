@@ -54,6 +54,9 @@ So if you have long mapped sequence it is better to use BTCharMapper.
 removeChars sequence is iterate sequentially (normally thera are only few chars to be explicitly 
 removed.)
 
+It is recomended to use BTCharMapper for long charmap sequences. And it is recomended to convert 
+sequences to BT form in compile time. 
+
 You can use method BTCharMapper.convertLinearToBT() to order mapping sequence in binary tree.
 
 You can write an simple code for transforming chars stored in file (first two lines as fromChars 
@@ -86,6 +89,9 @@ public class AlphabetFile {
   }
 }
 ```
+If you want to create BTCharMapper from plain sequences in runtime you can use instanceFromNoBT() 
+factory methods to create BTCharMapper instance. 
+
 
 ## MultipleCharMapper
 
