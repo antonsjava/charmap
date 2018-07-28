@@ -1,5 +1,6 @@
 # CharMap
 
+
 CharMap is simple Java library with API for transforming strings in char by char way.
 It simplyfy code, where you neew to replace some chars in string into onother ones.
 
