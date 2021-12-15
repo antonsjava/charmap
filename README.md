@@ -193,9 +193,9 @@ from:АаБбЦцЦцЧчДдДдзжЭэФфҐґГгХхІіЙйКкЛлМмН�
 
 ```
    <dependency>
-      <groupId>com.github.antonsjava</groupId>
+      <groupId>io.github.antonsjava</groupId>
       <artifactId>charmap</artifactId>
-      <version>1.0</version>
+      <version>LASTVERSION</version>
    </dependency>
 ```
 
