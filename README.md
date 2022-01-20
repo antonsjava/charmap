@@ -114,7 +114,7 @@ This example combine
  - Mapper mapping slash, backslash and space into underline and remoces some special chars.
  - Maper which keeps onlu printable ascii chars.
 
-## CE2Ascii and EE2Ascii
+## CE2Ascii, EE2Ascii ...
 
 CE2Ascii was main reason for this API. I need to transform some special 
 characters from Slovak alphabet into pure ASCII chars. So text is readable 
@@ -160,7 +160,7 @@ from:ÆæØøÅå
 from:ĂăÂâÎîȘșȚț
   to:AaAaIiSsTt
 
-# sorbian
+# serbian
 from:ČčĆćĚěŁłŃńÓóŘřŔŕŠšŚśŽžŹź
   to:CcCcEeLlNnOoRrRrSsSsZzZz
 
@@ -188,6 +188,12 @@ from:АаБбЦцЦцЧчДдДдзжЭэФфҐґГгХхІіЙйКкЛлМмН�
   to:AaBbCcCcCcDdDdzzEeFfGgHhHhIiJjKkLlMmNnOoPpRrSsSsTtUuUuVvYyZzZz
 
 ```
+
+Any2Ascii mapping
+
+I collected many characters (from several sources in many years) and try map them to ascii.
+This mapping include CE2Ascii mapping bud maps also some iregular characters, which are not in regulkar aplphabets. 
+it maps around 700 characters so mapping is littlebit slower than CE2Ascii
 
 ## Maven usage
 

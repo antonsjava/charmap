@@ -32,5 +32,12 @@ public class CECharMapperTest {
         Assert.assertTrue("all", result.equals(CE2Ascii.map(value)));
     }
     
+    @Test
+	public void mapany() throws Exception {
+        String value = "Aa\u00e1\u00e4bc\u010c\u010dd\u010fEe\u00e9fghi\u00edjkLl\u013a\u013emn\u0147\u0148o\u00f3\u00f4pQqr\u0155s\u0161t\u0165u\u00favwxy\u00fdz\u017d\u017e";
+        String result = "AaaabcCcddEeefghiijkLlllmnNnooopQqrrssttuuvwxyyzZz";
+
+        Assert.assertTrue("all", result.equals(Any2Ascii.map(value)));
+    }
     
 }
